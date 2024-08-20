@@ -15,7 +15,6 @@ export default function Home() {
         <h1>Welcome to My Portfolio</h1>
         {/* Other content */}
       </main>
-
       <Chatbot /> {/* Chatbot is always visible */}
     </div>
   );
