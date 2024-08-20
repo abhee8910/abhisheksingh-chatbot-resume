@@ -10,7 +10,6 @@ export default function Home() {
         <meta name="description" content="Abhishek Singh's Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main>
         <h1>Welcome to My Portfolio</h1>
         {/* Other content */}
