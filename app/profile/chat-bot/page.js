@@ -1,3 +1,4 @@
+// app/series/page.js
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation'; // Use next/navigation instead of next/router
@@ -6,7 +7,8 @@ import dynamic from 'next/dynamic';
 import { Box, Button, TextField, Typography, Paper, Avatar } from '@mui/material';
 import { Send } from '@mui/icons-material';
 
-// Dynamically import ReactMarkdown with no server-side rendering
+export default function ChatBotProfile() {
+    // Dynamically import ReactMarkdown with no server-side rendering
 const ReactMarkdown = dynamic(() => import('react-markdown'), { ssr: false });
 
 const faqChips = [
@@ -15,9 +17,7 @@ const faqChips = [
   { label: "Projects", query: "What projects have you worked on?" },
   { label: "Contact", query: "How can I contact you?" }
 ];
-
-const Chatbot = () => {
-  const router = useRouter(); // Correct usage of router
+    const router = useRouter(); // Correct usage of router
   const { pathname } = router;
   const [input, setInput] = useState('');
   const [inputtext, setInputtext] = useState('');
@@ -101,20 +101,20 @@ const Chatbot = () => {
       setIsTyping(false);
     }
   };
-
-  return (
+   return (
      <Box
       style={{
         position: 'fixed',
         top: 0,
         left: 0,
+        
         width: '100%',
-        height: '100%',
+        height: '92%',
         backgroundColor: '#333542', // Dark background
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        zIndex: 999,
+        zIndex: 100,
       }}
     >
         <Paper
@@ -245,6 +245,4 @@ const Chatbot = () => {
       </Box>
     
   );
-};
-
-export default Chatbot;
+}
