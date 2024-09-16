@@ -1,10 +1,11 @@
 // components/BottomNavigation.js
 "use client"; // Ensure this component is client-side only
 
-import { Box, BottomNavigation, BottomNavigationAction } from "@mui/material";
+import { Box, BottomNavigation, BottomNavigationAction, Tooltip } from "@mui/material";
 import { Group, Home, Person, Update } from "@mui/icons-material";
 import { useRouter } from "next/navigation"; // Use next/navigation instead of next/router
 import { useState } from "react";
+import { FaRobot } from "react-icons/fa";
 
 const BottomNavigationModule = () => {
   debugger;
@@ -36,27 +37,30 @@ const BottomNavigationModule = () => {
         icon={<Person />}
         style={{ color: pathname === "/" ? "#fefbd2" : "grey" }}
       />
-      <BottomNavigationAction
+      <Tooltip title="work in progress">
+        <BottomNavigationAction
         label="AI Hub"
         value="/ai-hub"
-        icon={<Home />}
+        icon={<FaRobot />}
         style={{ color: pathname === "/ai-hub" ? "#fefbd2" : "grey" }}
         disabled
-      />
+      /></Tooltip>
+    <Tooltip title="work in progress">
       <BottomNavigationAction
         label="Updates"
         value="/updates"
         icon={<Update />}
         style={{ color: pathname === "/updates" ? "#fefbd2" : "grey" }}
         disabled
-      />
+        /></Tooltip>
+         <Tooltip title="work in progress">
       <BottomNavigationAction
         label="Series"
         value="/series"
         icon={<Group />}
         style={{ color: pathname === "/series" ? "#fefbd2" : "grey" }}
         disabled
-      />
+      /></Tooltip>
     </BottomNavigation>
   );
 };
