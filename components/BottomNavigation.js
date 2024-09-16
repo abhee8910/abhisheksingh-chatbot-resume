@@ -40,26 +40,26 @@ const BottomNavigationModule = () => {
       <Tooltip title="work in progress">
         <BottomNavigationAction
         label="AI Hub"
-        value="/ai-hub"
+        value="/"
         icon={<FaRobot />}
         style={{ color: pathname === "/ai-hub" ? "#fefbd2" : "grey" }}
-        disabled
+        
       /></Tooltip>
     <Tooltip title="work in progress">
       <BottomNavigationAction
         label="Updates"
-        value="/updates"
+        value="/"
         icon={<Update />}
         style={{ color: pathname === "/updates" ? "#fefbd2" : "grey" }}
-        disabled
+        
         /></Tooltip>
          <Tooltip title="work in progress">
       <BottomNavigationAction
         label="Series"
-        value="/series"
+        value="/"
         icon={<Group />}
         style={{ color: pathname === "/series" ? "#fefbd2" : "grey" }}
-        disabled
+        
       /></Tooltip>
     </BottomNavigation>
   );
