@@ -72,7 +72,7 @@ const ChatbotProfile = () => {
   };
 
   const handleChipClick = async (query) => {
-    setMessages(prev => [...prev, { text: query, sender: 'user' }]);
+    setMessages(prev => [...prev]);
     try {
       setIsTyping(true);
       const response = await axios.post(process.env.NEXT_PUBLIC_API_URL, {
@@ -106,6 +106,7 @@ const ChatbotProfile = () => {
           flex: 1,
           overflowY: 'auto',
           padding: '10px',
+          marginBottom:'30px',
           backgroundColor: '#fefbd2',
         }}
       >
