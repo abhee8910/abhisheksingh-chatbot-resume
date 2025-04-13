@@ -15,7 +15,7 @@ const Header = () => (
     }}
   >
     <Avatar alt="Abhishek Singh" src="/assets/images/abheelogo.jpg" sx={{ marginRight: '10px' }} />
-    <Typography variant="h6">Abhishek Singh</Typography>
+    <Typography variant="h6">AI Abhee</Typography>
   </Box>
 );
 

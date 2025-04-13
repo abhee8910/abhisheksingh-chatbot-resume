@@ -31,36 +31,38 @@ const Footer = () => {
         zIndex: 110,
       }}
     >
-      <BottomNavigationAction
-        label="Profile"
-        value="/"
-        icon={<Person />}
-        style={{ color: pathname === "/" ? "#fefbd2" : "grey" }}
-      />
-      <Tooltip title="work in progress">
+     
+      
         <BottomNavigationAction
         label="AI Hub"
         value="/"
         icon={<FaRobot />}
-        style={{ color: pathname === "/ai-hub" ? "#fefbd2" : "grey" }}
+        style={{ color: pathname === "/" ? "#fefbd2" : "grey" }}
         
-      /></Tooltip>
-    <Tooltip title="work in progress">
+      />
+   
+   
       <BottomNavigationAction
         label="Updates"
-        value="/"
+        value="/updates"
         icon={<Update />}
         style={{ color: pathname === "/updates" ? "#fefbd2" : "grey" }}
         
-        /></Tooltip>
-         <Tooltip title="work in progress">
+        />
+    
       <BottomNavigationAction
         label="Series"
-        value="/"
+        value="/series"
         icon={<Group />}
         style={{ color: pathname === "/series" ? "#fefbd2" : "grey" }}
         
-      /></Tooltip>
+      />
+        <BottomNavigationAction
+        label="Profile"
+        value="/profile"
+        icon={<Person />}
+        style={{ color: pathname === "/profile" ? "#fefbd2" : "grey" }}
+      />
     </BottomNavigation>
   );
 };
