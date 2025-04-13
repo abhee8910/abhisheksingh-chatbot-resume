@@ -1,6 +1,7 @@
 // app/layout.js
-import '../styles/global.css'; // Global styles (ensure the correct path)
-import BottomNavigationModule from '../components/BottomNavigation';
+import '../styles/global.css';
+import Footer from '../components/BottomNavigation';
+import Header from '../components/Header';
 
 export const metadata = {
   title: "Abhishek Singh's Portfolio",
@@ -10,16 +11,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* Add other meta tags or external links if needed */}
-      </head>
-      <body>
-        <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-          <main style={{ flex: 1 }}>{children}</main> {/* This renders the page content */}
-          <BottomNavigationModule /> {/* Footer navigation */}
+      <body style={{ margin: 0, padding: 0 }}>
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          height: '100vh',
+          overflow: 'hidden',
+        }}>
+          <Header /> {/* fixed at top */}
+          <div style={{ flex: 1, overflow: 'auto' }}>
+            {children}
+          </div>
+          <Footer /> {/* fixed at bottom */}
         </div>
       </body>
     </html>

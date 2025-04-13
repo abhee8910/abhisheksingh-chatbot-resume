@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation"; // Use next/navigation instead of n
 import { useState } from "react";
 import { FaRobot } from "react-icons/fa";
 
-const BottomNavigationModule = () => {
+const Footer = () => {
   debugger;
   const router = useRouter(); // Correct usage of router
   const [pathname, setPathname] = useState("/");
@@ -65,4 +65,4 @@ const BottomNavigationModule = () => {
   );
 };
 
-export default BottomNavigationModule;
+export default Footer;
