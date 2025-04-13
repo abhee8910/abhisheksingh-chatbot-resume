@@ -14,7 +14,7 @@ const Header = () => (
       zIndex: 1000,
     }}
   >
-    <Avatar alt="Abhishek Singh" src="/assets/images/abheelogo.jpg" sx={{ marginRight: '10px' }} />
+    {/* <Avatar alt="Abhishek Singh" src="/assets/images/abheelogo.jpg" sx={{ marginRight: '10px' }} /> */}
     <Typography variant="h6">AI Abhee</Typography>
   </Box>
 );
