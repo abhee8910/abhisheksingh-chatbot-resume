@@ -3,7 +3,7 @@
 
 import { useRouter } from 'next/navigation';
 
-export default function Updates() {
+export default function WorkUnderProgress() {
   const router = useRouter();
 
   const goToProfile = () => {
