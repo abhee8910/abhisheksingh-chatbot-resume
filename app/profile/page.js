@@ -33,14 +33,17 @@ const ChatbotProfile = () => {
   ]);
   const [isTyping, setIsTyping] = useState(false);
   const chatBodyRef = useRef(null);
+  const chatEndRef = useRef(null);  // Reference to scroll to the last message
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
+  // Effect to scroll to bottom every time messages update
   useEffect(() => {
-    if (chatBodyRef.current) {
-      chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
+    // Ensure we scroll after messages state has been updated
+    if (chatEndRef.current) {
+      chatEndRef.current.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [messages]);
+  }, [messages]); // Dependency on messages so it triggers when messages change
 
   const handleInputChange = (e) => setInput(e.target.value);
 
@@ -106,7 +109,7 @@ const ChatbotProfile = () => {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-         minHeight: '81dvh', // safer on mobile than 100vh
+        minHeight: '81dvh', // safer on mobile than 100vh
         backgroundColor: '#fefbd2',
       }}
     >
@@ -151,6 +154,8 @@ const ChatbotProfile = () => {
             Bot is typing...
           </Typography>
         )}
+        {/* Scroll to the bottom marker */}
+        <div ref={chatEndRef} />
       </Box>
 
       {/* Sticky Bottom Area (Above Footer) */}
