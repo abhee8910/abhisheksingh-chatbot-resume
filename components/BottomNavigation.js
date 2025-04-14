@@ -42,27 +42,30 @@ const Footer = () => {
       <BottomNavigationAction
         label="AI Hub"
         value="/"
-        icon={<FaRobot color={pathname === "/" ? "#fefbd2" : "white"}  />}
-        color={pathname === "/" ? "#fefbd2" : "white"}
+        icon={<FaRobot  />}
+       
+        sx={{ color: `${pathname === "/" ? "#fefbd2" : "white"}` }}
          
       />
       <BottomNavigationAction
         label="Updates"
         value="/updates"
-        icon={<Update color={pathname === "/updates" ? "#fefbd2" : "white"}  />}
-        color={pathname === "/updates" ? "#fefbd2" : "white"}
+        icon={<Update  />}
+        sx={{ color: `${pathname === "/updates" ? "#fefbd2" : "white"}` }}
       />
       <BottomNavigationAction
         label="Series"
         value="/series"
-        icon={<Group color={pathname === "/series" ? "#fefbd2" : "white"}  />}
-        color={pathname === "/series" ? "#fefbd2" : "white"}
+        icon={<Group />}
+        sx={{ color: `${pathname === "/series" ? "#fefbd2" : "white"}` }}
+    
       />
       <BottomNavigationAction
         label="Profile"
         value="/profile"
-        icon={<Person color={pathname === "/profile" ? "#fefbd2" : "white"} />}
-        color={pathname === "/profile" ? "#fefbd2" : "white"}
+        icon={<Person  />}
+        sx={{ color: `${pathname === "/profile" ? "#fefbd2" : "white"}` }}
+       
       />
     </BottomNavigation>
   );
