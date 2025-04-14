@@ -14,7 +14,7 @@ const Footer = () => {
   const [pathname, setPathname] = useState("/");
 
   useEffect(() => {
-    // Sync state with actual path on initial render
+    // Set initial pathname when component mounts
     setPathname(window.location.pathname);
   }, []);
 
@@ -24,53 +24,54 @@ const Footer = () => {
   };
 
   return (
-    <div style={{ height: '100%', width: '100%' }}>
-      <BottomNavigation
-        showLabels
-        value={pathname}
-        onChange={(event, newValue) => handleNavigation(newValue)}
+    <BottomNavigation
+      showLabels
+      value={pathname}
+      onChange={(event, newValue) => handleNavigation(newValue)}
+      sx={{
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        height: '8vh',
+        backgroundColor: "#333542",
+        zIndex: 1200,
+        borderTop: '1px solid #444', // Optional subtle border
+      }}
+    >
+      <BottomNavigationAction
+        label="AI Hub"
+        value="/"
+        icon={<FaRobot />}
         sx={{
-          height: '100%',
-          backgroundColor: "#333542",
-          color: "#fff",
-          display: 'flex',
-          justifyContent: 'space-around',
+          color: pathname === "/" ? "#fefbd2" : "grey",
         }}
-      >
-        <BottomNavigationAction
-          label="AI Hub"
-          value="/"
-          icon={<FaRobot />}
-          sx={{
-            color: pathname === "/" ? "#fefbd2" : "grey",
-          }}
-        />
-        <BottomNavigationAction
-          label="Updates"
-          value="/updates"
-          icon={<Update />}
-          sx={{
-            color: pathname === "/updates" ? "#fefbd2" : "grey",
-          }}
-        />
-        <BottomNavigationAction
-          label="Series"
-          value="/series"
-          icon={<Group />}
-          sx={{
-            color: pathname === "/series" ? "#fefbd2" : "grey",
-          }}
-        />
-        <BottomNavigationAction
-          label="Profile"
-          value="/profile"
-          icon={<Person />}
-          sx={{
-            color: pathname === "/profile" ? "#fefbd2" : "grey",
-          }}
-        />
-      </BottomNavigation>
-    </div>
+      />
+      <BottomNavigationAction
+        label="Updates"
+        value="/updates"
+        icon={<Update />}
+        sx={{
+          color: pathname === "/updates" ? "#fefbd2" : "grey",
+        }}
+      />
+      <BottomNavigationAction
+        label="Series"
+        value="/series"
+        icon={<Group />}
+        sx={{
+          color: pathname === "/series" ? "#fefbd2" : "grey",
+        }}
+      />
+      <BottomNavigationAction
+        label="Profile"
+        value="/profile"
+        icon={<Person />}
+        sx={{
+          color: pathname === "/profile" ? "#fefbd2" : "grey",
+        }}
+      />
+    </BottomNavigation>
   );
 };
 
