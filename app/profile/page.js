@@ -39,7 +39,8 @@ const ChatbotProfile = () => {
 
   // Effect to scroll to bottom every time messages update
   useEffect(() => {
-    // Ensure we scroll after messages state has been updated
+    // Ensure we scroll after messages state has been updated]
+  
     if (chatEndRef.current) {
       chatEndRef.current.scrollIntoView({ behavior: 'smooth' });
     }
@@ -126,7 +127,7 @@ const ChatbotProfile = () => {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        minHeight: '100dvh', // safer on mobile than 100vh
+        height: '100%', // safer on mobile than 100vh
         backgroundColor: '#fefbd2',
         
       }}
