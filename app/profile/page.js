@@ -27,7 +27,7 @@ const ChatbotProfile = () => {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([
     {
-      text: 'Welcome to the portfolio of Abhishek Singh! I am here to provide you with information about my professional background, experience, projects, and how to contact me.Please ask whaterver you wanted to ask me',
+      text: 'Welcome to the portfolio of Abhishek Singh! I am here to provide you with information about my professional background, experience, projects, and how to contact me. Please ask whatever you’d like!',
       sender: 'bot',
     },
   ]);
@@ -104,13 +104,13 @@ const ChatbotProfile = () => {
       maxWidth="xl"
       disableGutters
       sx={{
-        height: '100vh',
         display: 'flex',
         flexDirection: 'column',
+        minHeight: '100dvh', // safer on mobile than 100vh
         backgroundColor: '#fefbd2',
       }}
     >
-      {/* Chat Body */}
+      {/* Chat Area */}
       <Box
         ref={chatBodyRef}
         sx={{
@@ -153,100 +153,93 @@ const ChatbotProfile = () => {
         )}
       </Box>
 
-     {/* Sticky Bottom Section */}
-{/* Sticky Bottom Section (above footer) */}
-<Box
-  sx={{
-    mt:4,
-    mb:1,
-    position: 'sticky',
-    bottom: 50, // Leave space for the footer
-    zIndex: 10,
-    backgroundColor: '#fefbd2',
-    borderTop: '1px solid #ccc',
-    width: '100%',
-  }}
->
-  {/* Quick FAQ Chips */}
-  <Box
-    sx={{
-     
-     
-      px: 2,
-      py: 1,
-      display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'center',
-      gap: 1,
-    }}
-  >
-    {faqChips.map((chip) => (
-      <Button
-        key={chip.query}
-        onClick={() => handleChipClick(chip.query)}
-        variant="contained"
-        size="small"
+      {/* Sticky Bottom Area (Above Footer) */}
+      <Box
         sx={{
-          backgroundColor: '#333542',
-          color: '#fefbd2',
-          borderRadius: '20px',
-          textTransform: 'none',
-          fontSize: { xs: '0.65rem', sm: '0.75rem' },
-          px: 2,
+          position: 'sticky',
+          bottom: 50, // space for footer
+          zIndex: 10,
+          backgroundColor: '#fefbd2',
+          borderTop: '1px solid #ccc',
+          width: '100%',
         }}
       >
-        {chip.label}
-      </Button>
-    ))}
-  </Box>
+        {/* FAQ Buttons */}
+        <Box
+          sx={{
+            px: 2,
+            py: 1,
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: 1,
+          }}
+        >
+          {faqChips.map((chip) => (
+            <Button
+              key={chip.query}
+              onClick={() => handleChipClick(chip.query)}
+              variant="contained"
+              size="small"
+              sx={{
+                backgroundColor: '#333542',
+                color: '#fefbd2',
+                borderRadius: '20px',
+                textTransform: 'none',
+                fontSize: { xs: '0.65rem', sm: '0.75rem' },
+                px: 2,
+              }}
+            >
+              {chip.label}
+            </Button>
+          ))}
+        </Box>
 
-  {/* Input Section */}
-  <Box
-    component="form"
-    onSubmit={handleSubmit}
-    sx={{
-      display: 'flex',
-      alignItems: 'center',
-      px: 2,
-      pb: 1,
-      flexWrap: 'wrap',
-      gap: 1,
-    }}
-  >
-    <TextField
-      fullWidth
-      variant="outlined"
-      size="small"
-      value={input}
-      onChange={handleInputChange}
-      placeholder="Type your message..."
-      sx={{
-        flex: 1,
-        backgroundColor: '#fefbd2',
-        input: { color: '#333542' },
-        borderRadius: '20px',
-      }}
-    />
-    <Button
-      type="submit"
-      variant="contained"
-      endIcon={<Send />}
-      sx={{
-        backgroundColor: '#333542',
-        color: '#fefbd2',
-        borderRadius: '20px',
-        '&:hover': {
-          backgroundColor: '#22232e',
-        },
-        whiteSpace: 'nowrap',
-      }}
-    >
-      Ask
-    </Button>
-  </Box>
-</Box>
-
-
+        {/* Input */}
+        <Box
+          component="form"
+          onSubmit={handleSubmit}
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            px: 2,
+            pb: 1,
+            gap: 1,
+            flexWrap: 'wrap',
+          }}
+        >
+          <TextField
+            fullWidth
+            variant="outlined"
+            size="small"
+            value={input}
+            onChange={handleInputChange}
+            placeholder="Type your message..."
+            sx={{
+              flex: 1,
+              backgroundColor: '#fefbd2',
+              input: { color: '#333542' },
+              borderRadius: '20px',
+            }}
+          />
+          <Button
+            type="submit"
+            variant="contained"
+            endIcon={<Send />}
+            sx={{
+              backgroundColor: '#333542',
+              color: '#fefbd2',
+              borderRadius: '20px',
+              '&:hover': {
+                backgroundColor: '#22232e',
+              },
+              whiteSpace: 'nowrap',
+            }}
+          >
+            Ask
+          </Button>
+        </Box>
+      </Box>
     </Container>
   );
 };
