@@ -51,57 +51,74 @@ const ChatbotProfile = () => {
     e.preventDefault();
     const trimmed = input.trim();
     if (!trimmed) return;
-    setInput('');
-
+    
+    // Step 1: Append user's message immediately
+    setMessages((prev) => [
+      ...prev,
+      { text: trimmed, sender: 'user' },
+    ]);
+  
+    setInput('');  // Clear the input field
+  
     try {
       setIsTyping(true);
+      
+      // Step 2: Make the API call
       const response = await axios.post(process.env.NEXT_PUBLIC_API_URL, {
         input: trimmed,
         history: messages,
       });
+      
       const { answer } = response.data;
-
+  
+      // Step 3: Append bot's response after receiving it
       setMessages((prev) => [
         ...prev,
-        { text: trimmed, sender: 'user' },
         { text: answer, sender: 'bot' },
       ]);
     } catch (err) {
       setMessages((prev) => [
         ...prev,
-        { text: trimmed, sender: 'user' },
         { text: 'Sorry, something went wrong.', sender: 'bot' },
       ]);
     } finally {
       setIsTyping(false);
     }
   };
-
+  
   const handleChipClick = async (query) => {
+    // Step 1: Append user's chip query immediately
+    setMessages((prev) => [
+      ...prev,
+      { text: query, sender: 'user' },
+    ]);
+  
     try {
       setIsTyping(true);
+      
+      // Step 2: Make the API call
       const response = await axios.post(process.env.NEXT_PUBLIC_API_URL, {
         input: query,
         history: messages,
       });
+  
       const { answer } = response.data;
-
+  
+      // Step 3: Append bot's response after receiving it
       setMessages((prev) => [
         ...prev,
-        { text: query, sender: 'user' },
         { text: answer, sender: 'bot' },
       ]);
     } catch (err) {
       setMessages((prev) => [
         ...prev,
-        { text: query, sender: 'user' },
         { text: 'Sorry, something went wrong.', sender: 'bot' },
       ]);
     } finally {
       setIsTyping(false);
     }
   };
-
+  
   return (
     <Container
       maxWidth="xl"
