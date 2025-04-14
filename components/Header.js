@@ -1,4 +1,3 @@
-// components/ChatHeader.js
 import { Box, Typography } from '@mui/material';
 
 const Header = () => (
@@ -6,13 +5,16 @@ const Header = () => (
     sx={{
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'center',
-      height: '100%', // Will inherit 10vh from layout
+      justifyContent: 'flex-start', // Align items to the left
+      height: '100%', // Will inherit from layout
       backgroundColor: '#333542',
       color: '#fefbd2',
+      padding: '0 20px', // Add horizontal padding
     }}
   >
-    <Typography variant="h6">AI Abhee</Typography>
+    <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+      AI Abhee
+    </Typography>
   </Box>
 );
 
