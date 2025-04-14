@@ -4,7 +4,7 @@ import { useState } from 'react';
 import WorkUnderProgress from '../../components/WorkUnderProgress';
 
 export default function AIHub() {
-  const [selectedMenu, setSelectedMenu] = useState('Featured AI Tools');
+  const [selectedMenu, setSelectedMenu] = useState('Featured');
 
   const handleMenuClick = (menu) => {
     setSelectedMenu(menu);
