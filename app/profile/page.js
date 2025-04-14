@@ -27,7 +27,7 @@ const ChatbotProfile = () => {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([
     {
-      text: 'Welcome to the portfolio of Abhishek Singh! I am here to provide you with information about my professional background, experience, projects, and how to contact me.',
+      text: 'Welcome to the portfolio of Abhishek Singh! I am here to provide you with information about my professional background, experience, projects, and how to contact me.Please ask whaterver you wanted to ask me',
       sender: 'bot',
     },
   ]);
