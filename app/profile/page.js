@@ -157,7 +157,7 @@ const ChatbotProfile = () => {
       <Box
         sx={{
           position: 'sticky',
-          bottom: 50, // space for footer
+          bottom: 0, // space for footer
           zIndex: 10,
           backgroundColor: '#fefbd2',
           borderTop: '1px solid #ccc',

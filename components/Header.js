@@ -1,20 +1,17 @@
 // components/ChatHeader.js
-import { Box, Typography, Avatar } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 const Header = () => (
   <Box
     sx={{
       display: 'flex',
       alignItems: 'center',
-      padding: '10px',
+      justifyContent: 'center',
+      height: '100%', // Will inherit 10vh from layout
       backgroundColor: '#333542',
       color: '#fefbd2',
-      position: 'sticky',
-      top: 0,
-      zIndex: 1000,
     }}
   >
-    {/* <Avatar alt="Abhishek Singh" src="/assets/images/abheelogo.jpg" sx={{ marginRight: '10px' }} /> */}
     <Typography variant="h6">AI Abhee</Typography>
   </Box>
 );
