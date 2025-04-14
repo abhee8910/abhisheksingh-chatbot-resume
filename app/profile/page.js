@@ -126,8 +126,9 @@ const ChatbotProfile = () => {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        minHeight: '81dvh', // safer on mobile than 100vh
+        minHeight: '100dvh', // safer on mobile than 100vh
         backgroundColor: '#fefbd2',
+        
       }}
     >
       {/* Chat Area */}
@@ -147,6 +148,7 @@ const ChatbotProfile = () => {
               display: 'flex',
               justifyContent: message.sender === 'user' ? 'flex-end' : 'flex-start',
               mb: 1,
+              mt:1
             }}
           >
             <Paper
