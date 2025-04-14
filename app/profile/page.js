@@ -106,7 +106,7 @@ const ChatbotProfile = () => {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        minHeight: '100dvh', // safer on mobile than 100vh
+         minHeight: '81dvh', // safer on mobile than 100vh
         backgroundColor: '#fefbd2',
       }}
     >
