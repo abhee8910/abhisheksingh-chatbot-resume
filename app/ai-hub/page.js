@@ -1,4 +1,3 @@
-// app/page.js
 "use client";
 
 import { useState } from 'react';
@@ -14,19 +13,18 @@ export default function AIHub() {
   const sidebarWidth = 200;
 
   return (
-    <div style={{ display: 'flex' }}>
-      {/* Sidebar */}
+    <div style={{ display: 'flex', height: '100%', width: '100%' }}>
+      {/* Sidebar (no longer fixed) */}
       <div
         style={{
           width: `${sidebarWidth}px`,
-          height: '100vh',
-          position: 'fixed',
-          top: 35,
-          left: 0,
+          height: '100%',
           backgroundColor: '#333542',
           color: '#fefbd2',
           padding: '20px',
           boxSizing: 'border-box',
+          flexShrink: 0,
+          overflowY: 'auto',
         }}
       >
         <h3>AI Hub</h3>
@@ -38,24 +36,23 @@ export default function AIHub() {
         </ul>
       </div>
 
-      {/* Scrollable Content Area */}
+      {/* Content Area */}
       <div
         style={{
-          marginLeft: `${sidebarWidth}px`,
-          height: '100vh',
-          borderRadius: '12px', // Rounded corners
+          height: '100%',
+          borderRadius: '12px',
           backgroundColor: '#fefbd2',
           color: '#333542',
           padding: '20px',
           boxSizing: 'border-box',
           flexGrow: 1,
+          overflowY: 'auto',
         }}
       >
-        {/* <h1>{selectedMenu} Section</h1> */}
-        {selectedMenu === 'Home' && <WorkUnderProgress/>}
-        {selectedMenu === 'About' && <WorkUnderProgress/>}
-        {selectedMenu === 'Services' && <WorkUnderProgress/>}
-        {selectedMenu === 'Contact' && <WorkUnderProgress/>}
+        {selectedMenu === 'Home' && <WorkUnderProgress />}
+        {selectedMenu === 'About' && <WorkUnderProgress />}
+        {selectedMenu === 'Services' && <WorkUnderProgress />}
+        {selectedMenu === 'Contact' && <WorkUnderProgress />}
         <div style={{ height: '1500px' }} /> {/* Just for scroll testing */}
       </div>
     </div>
